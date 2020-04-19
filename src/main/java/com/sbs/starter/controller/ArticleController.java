@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -20,11 +21,12 @@ public class ArticleController {
 	ArticleService articleService;
 	
 	@RequestMapping("/article/list")
-	public String showList() {
+	public String showList(Model aModel) {
 		
 		List<Article> list = articleService.getList();
 		
-		log.info("list: "+list);
+		//log.info("list: "+list);
+		aModel.addAttribute("list", list);
 		
 		return "article/list";
 	}
