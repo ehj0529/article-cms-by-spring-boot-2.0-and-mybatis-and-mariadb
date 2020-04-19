@@ -1,0 +1,62 @@
+# 기본적인 설정 파일(개발환경, 운영기환경 둘다 적용 되는 부분임.
+spring:
+  profiles:
+    active: local # 기본적으로 local이 선택된다는 뜻
+  mvc:
+    view:
+      prefix: /WEB-INF/jsp/ 
+      suffix: .jsp
+  datasource: #개발 환경 DB 정보 셋팅
+    driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
+    url: jdbc:log4jdbc:mysql://127.0.0.1:3306/starter?autoReconnect=true&useUnicode=true&characterEncoding=utf8&serverTimezone=UTC # DB명 치환(site1로 변경함)
+    username: root # DB아이디 치환
+    password: ''   # DB비번 치환
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 100MB
+      max-request-size: 100MB      
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: jeongchoul@gmail.com # GMAIL아이디 치환
+    password: Wlsgus0529! # GMAIL비번 치환
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+mybatis:
+  type-aliases-package: com.sbs.starter.dto # dto의 풀 패키지 명 입력
+  
+#custom:
+#  logoText: 사이트1 # 사이트 명 치환
+#  uploadDir: C:/my_work/site1/uploads # 파일업로드 되는 곳 치환
+#  emailSender: no-reply@noreply.com # 사이트 메일 발신자 이름으로 치환
+#  emailSenderName: 사이트1 관리자 # 사이트 운영자 명으로 치환
+
+---
+# 개발환경 설정 파일
+spring:
+  profiles: local
+server:
+  port: 8083 # 포트번호 치환
+
+---
+
+# 운영환경만의 설정
+spring:
+  profiles: production
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/starter?autoReconnect=true&useUnicode=true&characterEncoding=utf8&serverTimezone=UTC # DB명 치환(서비스 용)
+    username: site1 # DB아이디 치환(서비스 용)
+    password: sbs123414 # DB비번 치환(서비스 용)
+logging:
+  level:
+    root: info
+server:
+  port: 8086 # 포트번호 치환(서비스 용)
+custom:
+  uploadDir: C:/work/abc/uploads # 파일업로드 되는 곳 치환(서비스용) /web/site1/public/uploads
