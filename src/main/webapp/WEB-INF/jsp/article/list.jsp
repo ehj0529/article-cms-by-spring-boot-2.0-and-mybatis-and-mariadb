@@ -13,6 +13,9 @@
 	<h1>게시물 리스트</h1>
 
 	<h2>전체 게시물 개수 : ${totalCount}</h2>
+	
+	<a href="./add">게시물 추가</a>
+	
 	<c:forEach var="article" items="${list}"  >	
 	<section>번호 : ${article.id} 제목 : ${article.title}    내용 : ${article.body}	</section>
 	<hr>
