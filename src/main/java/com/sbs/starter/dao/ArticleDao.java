@@ -15,4 +15,6 @@ public interface ArticleDao {
 
 	public int getTotalCount();
 
+	public Article getOne(long id);
+
 }
