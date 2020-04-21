@@ -26,9 +26,12 @@ public class ArticleController {
 	public String showList(Model aModel) {
 		
 		List<Article> list = articleService.getList();
+		int totalCount = articleService.getTotalCount();
 		
-		//log.info("list: "+list);
+		
 		aModel.addAttribute("list", list);
+		aModel.addAttribute("totalCount", totalCount);
+		
 		
 		return "article/list";
 	}
@@ -42,12 +45,10 @@ public class ArticleController {
 	@RequestMapping("/article/doAdd")
 	@ResponseBody
 	public String doAdd(@RequestParam Map<String, Object> param) { //String title, String body
+
 		long newId = articleService.add(param);
-		
-//		param.get("title");
-//		param.get("body");
-//		System.out.println("newId ::"+newId );		
 		return newId +"번 게시물이 추가되었습니다.";
+		
 	}
 
 

@@ -1,6 +1,5 @@
 package com.sbs.starter.service;
 
-import java.math.BigInteger;
 import java.util.List;
 import java.util.Map;
 
@@ -35,6 +34,11 @@ public class ArticleServiceImpl implements ArticleService{
 		//log.info("\n <ArticleServiceImpl>\n newId :"+param.get("id") );
 		
 		return CUtil.getAsLong(param.get("id")); 
+	}
+
+	@Override
+	public int getTotalCount() {
+		return articleDao.getTotalCount(); 
 	}
 
 }
