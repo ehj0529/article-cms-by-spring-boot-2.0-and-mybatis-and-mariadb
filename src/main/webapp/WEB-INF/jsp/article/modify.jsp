@@ -7,14 +7,15 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>커뮤니티 사이트 - 게시물 작성</title>
+<title>커뮤니티 사이트 - 게시물 수정</title>
 <link rel="stylesheet" href="/resource/common.css">
-
+	
 </head>
 <body>
-	<h1>게시물 작성</h1>
+	<h1 class="con">게시물 수정</h1>
+
 	<script >
-		function submitAddForm(form){
+		function submitModifyForm(form){
 			
 			form.title.value = form.title.value.trim();
 			
@@ -40,13 +41,14 @@
 	</script>
 	
 	
-	<form class="con common-form" action="./doAdd" method="POST" onsubmit="submitAddForm(this); return false;">
+	<form class="con common-form" action="./doModify" method="POST" onsubmit="submitModifyForm(this); return false;">
+		<input type="hidden" name="id" value="${article.id}">
 		<div>
 			<span>
 				제목
 			</span>
 			<div>
-				<input name="title" type="text" placeholder="제목"  autofocus="autofocus" >
+				<input name="title" type="text" placeholder="제목"  autofocus="autofocus" value="${article.title}">
 				
 			</div>
 		</div>
@@ -54,21 +56,28 @@
 		<div>
 			<span> 내용 </span>
 			<div>
-				<textarea name="body" placeholder="내용" ></textarea>
+				<textarea name="body" placeholder="내용" >${article.body}</textarea>
 			</div>
 		</div>
 		
 		<div>
 			<span>
-				작성
+				수정
 			</span>
 			<div>
-				<input type="submit" value="작성" > 
+				<input type="submit" value="수정" > 
 				<input type="reset" value="취소" onclick="history.back();" > 
 			</div>
 		</div>
 
 	</form>
+
+
+	<div class="btns con">
+		<a href="./list">게시물 리스트</a>
+		<a href="./add">게시물 추가</a>
+		<a onclick="if( confirm('수정 하시겠습니까?') == false )return false;" href="./doModify?id=${article.id}">게시물 수정</a>
+	</div>
 
 </body>
 </html>

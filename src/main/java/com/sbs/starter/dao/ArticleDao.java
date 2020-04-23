@@ -19,4 +19,6 @@ public interface ArticleDao {
 
 	public void delete(long id);
 
+	public long modify(Map<String, Object> param);
+	
 }

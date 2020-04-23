@@ -52,4 +52,10 @@ public class ArticleServiceImpl implements ArticleService{
 		
 	}
 
+	@Override
+	public void modify(Map<String, Object> param) {
+		articleDao.modify(param);
+		
+	}
+
 }

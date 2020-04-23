@@ -18,9 +18,17 @@
     <insert id="add" parameterType="map" useGeneratedKeys="true" keyProperty="id">
     	INSERT INTO article
     	SET regDate = NOW(),
-    	title = #{title},
-    	body = #{body}
+    		title = #{title},
+    		body = #{body}
     </insert> 
+    
+	<update id="modify" parameterType="map" > 
+		UPDATE article
+		   SET title = #{title},
+		 	   body = #{body}
+		WHERE id = #{id} 
+	</update>
+    
     
     <delete id="delete" parameterType="long"> 
     	DELETE FROM article WHERE id = #{id} 
