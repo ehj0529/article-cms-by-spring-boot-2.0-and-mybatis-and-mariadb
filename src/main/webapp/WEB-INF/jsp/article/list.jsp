@@ -22,7 +22,9 @@
 	
 	<div class="con">
 		<c:forEach var="article" items="${list}"  >	
-			<section>번호 : ${article.id} 제목 : ${article.title}    내용 : ${article.body}	</section>
+			<section>
+				<a href="./detail?id=${article.id}"> 번호 : ${article.id} 제목 : ${article.title}    내용 : ${article.body} </a>	
+			</section>
 			<hr>
 		</c:forEach>
 	</div>
