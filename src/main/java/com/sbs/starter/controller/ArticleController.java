@@ -108,7 +108,7 @@ public class ArticleController {
 		StringBuilder sb = new StringBuilder();
 		
 		sb.append("alert('"+msg+"');");
-		sb.append("location.replace('detail?id="+id+"');");
+		sb.append("location.replace('./detail?id="+id+"');");
 
 		sb.insert(0,"<script>");
 		sb.append("</script>");
