@@ -50,7 +50,7 @@
 	</script>
 	
 	
-	<form class="con common-form" action="./do/Join" method="POST" onsubmit="submitJoinForm(this); return false;">
+	<form class="con common-form" action="./doJoin" method="POST" onsubmit="submitJoinForm(this); return false;">
 		<div>
 			<span> 로그인ID </span>
 			<div>
