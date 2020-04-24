@@ -9,9 +9,10 @@
 
 	<section class="con">
 		번호 : ${article.id}<br>
-		제목 : ${article.title}<br>    
+		  조회수 :  ${article.hit}<br><br>
+		제목 : ${article.title}<br><br>    
 		내용 : ${article.body}
-		조회수 :  ${article.hit}
+		<br><br>
 	</section>
 
 	<div class="btns con">
