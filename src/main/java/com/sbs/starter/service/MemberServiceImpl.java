@@ -41,12 +41,6 @@ public class MemberServiceImpl implements MemberService {
 	}
 
 	@Override
-	public Member getOne(long loginedMemberId) {
-		
-		return memberDao.getOne(loginedMemberId);
-	}
-
-	@Override
 	public Map<String, Object> join(Map<String, Object> param) {
 
 		memberDao.join(param);
@@ -70,6 +64,18 @@ public class MemberServiceImpl implements MemberService {
 		rs.put("id",newId);
 		
 		return rs;
+	}
+
+	@Override
+	public Member getOne(long loginedMemberId) {
+		
+		return memberDao.getOne(loginedMemberId);
+	}
+
+	@Override
+	public Member getMatchedOne(String loginId, String loginPw) {
+
+		return memberDao.getMatchedOne( loginId, loginPw);
 	}
 
 }

@@ -6,9 +6,9 @@
 <c:set var="pageName" value="메인"/>
     
 <%@ include file="../part/head.jspf" %>
-
-	<div class="btns con">
-		<a href="/">메인</a>
-	</div>
+	
+	<c:if test="${loginedMember != null}">
+		<div class="con"> 회원 로그인ID : ${loginedMember.loginId} </div>
+	</c:if>
 	
 <%@ include file="../part/foot.jspf" %>

@@ -8,7 +8,11 @@
     </select>
 
     <select id="getOne" parameterType="long" resultType="Member">
-    	SELECT * FROM member WHERE loginId = #{loginedMemberId} 
+    	SELECT * FROM member WHERE id = #{id}
+    </select>
+    
+    <select id="getMatchedOne" parameterType="String" resultType="Member">
+    	SELECT * FROM member WHERE loginId = #{loginId} AND loginPw = #{loginPw}   
     </select>
     
     <insert id="join" parameterType="map" useGeneratedKeys="true" keyProperty="id">

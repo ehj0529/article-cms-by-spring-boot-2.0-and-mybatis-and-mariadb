@@ -11,8 +11,10 @@ public interface MemberDao {
 
 	public int getLoginIdDupCount(String loginId);
 
-	public Member getOne(long loginedMemberId);
-
 	public void join(Map<String, Object> param);
+
+	public Member getMatchedOne(String loginId, String loginPw);
+
+	public Member getOne(long loginedMemberId);
 
 }

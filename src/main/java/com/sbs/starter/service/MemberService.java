@@ -12,4 +12,6 @@ public interface MemberService {
 
 	Map<String, Object> join(Map<String, Object> param);
 
+	Member getMatchedOne(String loginId, String loginPw);
+
 }
