@@ -28,11 +28,6 @@ public class ArticleServiceImpl implements ArticleService{
 	@Override
 	public long add(Map<String, Object> param) {
 		articleDao.add(param);
-		
-		//BigInteger bigIntId = (BigInteger) param.get("id");
-		//long newId = bigIntId.longValue();
-		//log.info("\n <ArticleServiceImpl>\n newId :"+param.get("id") );
-		
 		return CUtil.getAsLong(param.get("id")); 
 	}
 

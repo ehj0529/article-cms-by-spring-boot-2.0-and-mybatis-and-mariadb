@@ -33,12 +33,12 @@
 	<c:if test="${loginedMember != null}">
 		<div class="con"> 회원 로그인ID : ${loginedMember.loginId} </div>
 		
-		<div>
+<!-- 		<div>
 			<span> 로그아웃 </span>
 			<div>
 				<input type="submit" value="로그아웃" > 
 			</div>
-		</div>
+		</div> -->
 	</c:if>
 		
 

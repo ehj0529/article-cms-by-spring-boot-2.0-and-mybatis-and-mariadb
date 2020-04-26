@@ -28,8 +28,7 @@ public class ArticleController {
 		articleService.hitUp(id);
 
 		Article article = articleService.getOne(id);
-		
-		
+	
 		model.addAttribute("article", article);
 				
 		return "article/detail";
@@ -74,7 +73,7 @@ public class ArticleController {
 		StringBuilder sb = new StringBuilder();
 		
 		sb.append("alert('"+msg+"');");
-		sb.append("location.replace('.detail?id="+newId+"');");
+		sb.append("location.replace('./detail?id="+newId+"');");
 
 		sb.insert(0,"<script>");
 		sb.append("</script>");

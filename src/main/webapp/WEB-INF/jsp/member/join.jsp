@@ -82,9 +82,4 @@
 
 	</form>
 	
-	<div class="btns con">
-		<a href="/">메인</a>
-		<a href="/">가입</a>
-	</div>
-	
 <%@ include file="../part/foot.jspf" %>
