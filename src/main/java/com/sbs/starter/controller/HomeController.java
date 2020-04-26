@@ -20,18 +20,7 @@ public class HomeController {
 	MemberService memberService;
 	
 	@RequestMapping("/home/main")
-	public String showMain(HttpSession session, Model model) {
-		
-		long loginedMemberId = 0;
-		
-		if ( session.getAttribute("loginedMemberId") != null) {
-			loginedMemberId = (long) session.getAttribute("loginedMemberId");  
-		}
-		
-		log.info("HOME Controller loginedMemberId::"+loginedMemberId);
-		Member loginedMember = memberService.getOne(loginedMemberId);
-		
-		model.addAttribute("loginedMember",loginedMember);
+	public String showMain(Model model) {
 		
 		return "home/main";
 	}
