@@ -41,6 +41,13 @@ public class HomeController {
 		return "redirect:/home/main";
 	}
 	
-	
+	@RequestMapping("/home/doLogout")
+	public String doLogout( HttpSession session) {
+		
+		//세션에서 아이디를삭제한다.
+		session.removeAttribute("loginedMemberId");
+		
+		return "redirect:/";
+	}	
 	
 }
