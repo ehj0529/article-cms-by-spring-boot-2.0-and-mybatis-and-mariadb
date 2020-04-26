@@ -26,6 +26,10 @@
 
 	<form class="con common-form" action="./doLogout" method="POST" onsubmit="submitMainLogoutForm(this); return false;">
 	
+	<div>
+		테스트 넘버 : ${testNumber}
+	</div>
+	
 	<c:if test="${loginedMember != null}">
 		<div class="con"> 회원 로그인ID : ${loginedMember.loginId} </div>
 		
